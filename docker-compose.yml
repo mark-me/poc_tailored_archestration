@@ -1,0 +1,39 @@
+version: '3'
+services:
+  rstudio_development:
+    container_name: rstudio_dev
+    image: rstudio_dev:1.0
+    restart: unless-stopped
+    environment:
+      - PASSWORD=rstudio
+    volumes:
+      - /home/mark/data:/data 
+      - /home/mark:/home/rstudio
+    ports:
+      - 8787:8787
+  nginx_server:
+    container_name: nginx
+    image: nginx
+    restart: unless-stopped
+    volumes:
+      - /home/mark/reports:/usr/share/nginx/html:ro
+    ports:
+      - 80:80
+  portainer:
+    container_name: portainer
+    image: portainer/portainer
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 9000:9000
+#  product_a:
+#    container_name: product_a_1_0_0
+#    image: product_a:1.0
+#    restart: unless-stopped
+#    volumes:
+#      - /home/mark/data:/data 
+#      - /home/mark/reports:/reports
+#    ports:
+#      - 8000:8000
+
