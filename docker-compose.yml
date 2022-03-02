@@ -2,7 +2,7 @@ version: '3'
 services:
   rstudio_development:
     container_name: rstudio_dev
-    image: rstudio_dev:1.0
+    image: rstudio_dev:latest
     restart: unless-stopped
     environment:
       - PASSWORD=rstudio
