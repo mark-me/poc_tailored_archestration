@@ -27,13 +27,13 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - 9000:9000
-#  product_a:
-#    container_name: product_a_1_0_0
-#    image: product_a:v1.0.0
-#    restart: unless-stopped
-#    volumes:
-#      - /home/mark/data:/data 
-#      - /home/mark/reports:/reports
-#    ports:
-#      - 8000:8000
+  product_a_v1.0.3:
+    container_name: product_a_v1.0.3
+    image: product_a:v1.0.3
+    restart: unless-stopped
+    volumes:
+      - /home/mark/data:/data 
+      - /home/mark/reports:/reports
+    ports:
+      - 8000:8000
 
