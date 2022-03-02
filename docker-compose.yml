@@ -8,7 +8,7 @@ services:
       - PASSWORD=rstudio
     volumes:
       - /home/mark/data:/data 
-      - /home/mark:/home/rstudio
+      - /home/mark/r-scripts:/home/rstudio
     ports:
       - 8787:8787
   nginx_server:
@@ -29,7 +29,7 @@ services:
       - 9000:9000
 #  product_a:
 #    container_name: product_a_1_0_0
-#    image: product_a:1.0
+#    image: product_a:v1.0.0
 #    restart: unless-stopped
 #    volumes:
 #      - /home/mark/data:/data 
